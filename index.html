@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>魔法少女ノ青春劇 - リンク集</title>
     <style>
-        /* 全体の背景とフォント */
+        /* --- 全体の設定 --- */
         body {
             font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
             background: linear-gradient(135deg, #fce4ec 0%, #f3e5f5 50%, #e1f5fe 100%);
@@ -15,113 +15,281 @@
             flex-direction: column;
             align-items: center;
             color: #444;
+            min-height: 100vh;
+            overflow-x: hidden; /* 横スクロール防止 */
+            position: relative;
         }
 
-        /* タイトル部分 */
+        /* --- 背景画像の共通スタイル --- */
+        .bg-scatter-container {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 0; /* コンテンツのすぐ後ろ */
+            pointer-events: none; /* 操作を邪魔しない */
+        }
+        .scatter-img {
+            position: absolute;
+            opacity: 0.4; /* 透け具合 */
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            border: 5px solid white;
+            border-radius: 10px;
+        }
+        .scatter-img.is-icon {
+            border-radius: 50%;
+            border-width: 3px;
+            opacity: 0.6;
+            width: 70px; /* アイコンの基本サイズ */
+        }
+        .scatter-img.is-scene {
+            width: 280px; /* シーン画像の基本サイズ(PC基準) */
+        }
+
+        /* --- 各画像の固定配置設定 (ここを調整して配置を決めています) --- */
+        /* 大きなシーン画像 */
+        .pos-scene-1 { top: 5%; left: 2%; transform: rotate(-15deg); width: 320px; } /* 左上 */
+        .pos-scene-2 { top: 8%; right: 3%; transform: rotate(10deg); width: 300px; } /* 右上 */
+        .pos-scene-3 { top: 45%; left: -5%; transform: rotate(5deg); width: 250px; } /* 左中 */
+        .pos-scene-4 { top: 50%; right: -2%; transform: rotate(-8deg); width: 260px; } /* 右中 */
+        .pos-scene-5 { bottom: 5%; left: 15%; transform: rotate(-12deg); width: 310px; } /* 左下 */
+
+        /* アイコン画像 (シーンや中央コンテンツを避けて配置) */
+        .pos-emma  { top: 28%; left: 18%; transform: rotate(20deg); }
+        .pos-hiro  { top: 35%; right: 15%; transform: rotate(-15deg); }
+        .pos-anan  { top: 15%; left: 40%; transform: rotate(5deg); }
+        .pos-noa   { top: 20%; right: 35%; transform: rotate(-10deg); }
+        .pos-reia  { bottom: 35%; left: 8%; transform: rotate(25deg); }
+        .pos-miria { bottom: 40%; right: 10%; transform: rotate(-20deg); }
+        .pos-arisa { top: 5%; left: 50%; transform: rotate(15deg); }
+        .pos-sherry{ top: 10%; right: 50%; transform: rotate(-5deg); }
+        .pos-coco  { bottom: 15%; left: 50%; transform: rotate(10deg); }
+        .pos-meruru{ bottom: 20%; right: 40%; transform: rotate(-15deg); }
+        .pos-hanna { bottom: 5%; right: 5%; transform: rotate(30deg); }
+        .pos-mago  { bottom: 8%; right: 25%; transform: rotate(-10deg); }
+        .pos-nanoka{ top: 60%; left: 20%; transform: rotate(-5deg); }
+
+        /* スマホなど画面が狭いとき用の調整 */
+        @media (max-width: 768px) {
+            .scatter-img { opacity: 0.25; } /* スマホでは少し薄くする */
+            .scatter-img.is-scene { width: 180px; } /* シーン画像を少し小さく */
+            .scatter-img.is-icon { width: 50px; } /* アイコンを少し小さく */
+            /* はみ出しすぎるものを調整 */
+            .pos-scene-1 { left: -10%; }
+            .pos-scene-2 { right: -10%; }
+        }
+
+
+        /* --- 中央コンテンツのスタイル --- */
+        .content-wrapper {
+            position: relative; z-index: 10; /* 最前面 */
+            width: 100%; max-width: 500px;
+            display: flex; flex-direction: column; align-items: center;
+        }
+
         h1 {
-            font-size: 2.2rem;
-            color: #d81b60;
-            text-align: center;
-            margin-bottom: 30px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-            letter-spacing: 2px;
+            font-size: 2.2rem; color: #d81b60; text-align: center;
+            margin-bottom: 15px; text-shadow: 2px 2px 4px rgba(255,255,255,0.8);
+            background: rgba(255, 255, 255, 0.6); padding: 5px 20px; border-radius: 30px;
         }
 
-        /* リンクのコンテナ */
-        .links-container {
-            width: 100%;
-            max-width: 450px;
+        .main-description {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px; border-radius: 20px;
+            margin-bottom: 30px; line-height: 1.6;
+            color: #6a1b9a; font-size: 0.95rem; text-align: center;
+            border: 2px solid #f06292;
+            animation: fuwatto 2s ease forwards;
+            opacity: 0;
         }
 
-        /* 各リンクボタンの基本スタイル */
+        @keyframes fuwatto {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .links-container { width: 100%; }
+
         .link-card {
-            display: block;
-            background: rgba(255, 255, 255, 0.8);
-            margin-bottom: 12px;
-            padding: 18px;
-            text-align: center;
-            text-decoration: none;
-            color: #d81b60;
-            font-weight: bold;
-            border-radius: 50px; /* 角丸で魔法少女っぽく */
+            display: flex; align-items: center;
+            background: rgba(255, 255, 255, 0.95); /* 背景を濃くして読みやすく */
+            margin-bottom: 15px; padding: 12px 18px;
+            text-decoration: none; border-radius: 20px;
             border: 2px solid #f06292;
             box-shadow: 0 4px 15px rgba(240, 98, 146, 0.2);
             transition: all 0.3s ease;
-            backdrop-filter: blur(5px);
         }
 
-        /* ホバー（マウスを乗せた時）の動き */
-        .link-card:hover {
-            transform: scale(1.03);
-            background: #f06292;
-            color: white;
-            box-shadow: 0 6px 20px rgba(240, 98, 146, 0.4);
+        a.link-card:hover {
+            transform: scale(1.02); background: #ffffff;
+            box-shadow: 0 8px 25px rgba(240, 98, 146, 0.4);
         }
 
-        /* Coming Soon（クリックできないボタン） */
-        .coming-soon {
-            background: rgba(200, 200, 200, 0.5);
-            color: #888;
-            border: 2px dashed #bbb;
-            box-shadow: none;
-            cursor: default;
-        }
-        .coming-soon:hover {
-            transform: none;
-            background: rgba(200, 200, 200, 0.5);
-            color: #888;
+        .char-icon {
+            width: 55px; height: 55px; border-radius: 50%;
+            margin-right: 15px; border: 3px solid #fff;
+            object-fit: cover; flex-shrink: 0;
         }
 
-        /* セクション分けのラベル */
+        .text-group { display: flex; flex-direction: column; }
+        .char-name { color: #d81b60; font-weight: bold; font-size: 1.1rem; margin-bottom: 4px; }
+        .prologue { color: #666; font-size: 0.85rem; line-height: 1.3; }
+
         .section-label {
-            text-align: center;
-            font-weight: bold;
-            margin: 25px 0 15px;
-            color: #880e4f;
-            font-size: 1.1rem;
-            border-bottom: 1px solid #f06292;
-            display: block;
-            padding-bottom: 5px;
+            text-align: center; font-weight: bold; margin: 30px 0 15px;
+            color: #880e4f; font-size: 1.1rem; border-bottom: 2px solid #f06292;
+            width: 100%; padding-bottom: 5px;
         }
 
-        /* おまけセクション */
-        .omake {
-            background: rgba(255, 255, 255, 0.5);
-            border: 2px solid #9575cd;
-            color: #5e35b1;
-        }
-        .omake:hover {
-            background: #9575cd;
-        }
+        .special-card { background: rgba(243, 229, 245, 0.95); border-color: #9575cd; }
+        .r18-card { background: rgba(252, 228, 236, 0.95); border-color: #ad1457; }
+        .r18-label { color: #ad1457; border-bottom-color: #ad1457; }
+        .coming-soon { background: rgba(230, 230, 230, 0.9); border: 2px dashed #bbb; cursor: default; }
+
     </style>
 </head>
 <body>
 
-    <h1>魔法少女ノ青春劇</h1>
-
-    <div class="links-container">
-        <a href="https://zeta-ai.io/ja/plots/8517e36f-a02c-4df2-8661-7925bf9d5142/profile?share_id=hxcdadewi" class="link-card" target="_blank">桜羽エマ</a>
-        <a href="https://zeta-ai.io/ja/plots/a43d310b-ecef-4afc-933c-8711ec4cd8e1/profile?share_id=ykm9pujvl" class="link-card" target="_blank">二階堂ヒロ</a>
-        <a href="https://zeta-ai.io/ja/plots/e5d20644-7cdf-414d-82fa-5ab2f250c34e/profile?share_id=t2w8t0m6" class="link-card" target="_blank">夏目アンアン</a>
-        <a href="https://zeta-ai.io/ja/plots/1d3ec696-70ea-4d4c-824f-bbb65ae11fad/profile?share_id=vko2qs1mb" class="link-card" target="_blank">城ヶ崎ノア</a>
-        <a href="https://zeta-ai.io/ja/plots/7802a65d-ae96-4fb2-919e-f68af05dd511/profile?share_id=79v42qfu6" class="link-card" target="_blank">蓮見レイア</a>
-        <a href="https://zeta-ai.io/ja/plots/93f5a3d7-2546-4a9b-a9c9-5b8811bb3510/profile?share_id=tzeuikypd" class="link-card" target="_blank">佐伯ミリア</a>
+    <div class="bg-scatter-container">
+        <img src="bg1.jpg" class="scatter-img is-scene pos-scene-1">
+        <img src="bg2.jpg" class="scatter-img is-scene pos-scene-2">
+        <img src="bg3.jpg" class="scatter-img is-scene pos-scene-3">
+        <img src="bg4.webp" class="scatter-img is-scene pos-scene-4">
+        <img src="bg5.jpg" class="scatter-img is-scene pos-scene-5">
         
-        <div class="link-card coming-soon">宝生マーゴ (Coming soon...)</div>
-        <div class="link-card coming-soon">黒部ナノカ (Coming soon...)</div>
-
-        <a href="https://zeta-ai.io/ja/plots/d07913fb-34a4-47cf-a326-82df6bd5818c/profile?share_id=7974ntsv" class="link-card" target="_blank">紫藤アリサ</a>
-        <a href="https://zeta-ai.io/ja/plots/a2fc85b1-b0b8-486e-89b4-e4c263b5a0ba/profile?share_id=w5yu3wi6v" class="link-card" target="_blank">橘シェリー</a>
-        
-        <div class="link-card coming-soon">遠野ハンナ (Coming soon...)</div>
-        
-        <a href="https://zeta-ai.io/ja/plots/5cb26be3-a8c7-4597-8631-81079c9caafe/profile?share_id=vrj0nutop" class="link-card" target="_blank">沢渡ココ</a>
-        
-        <a href="https://zeta-ai.io/ja/plots/35d25a49-10e3-45cc-8be9-94fc9ded8430/profile?share_id=vj5pu87b" class="link-card" target="_blank">氷上メルル</a>
-
-        <span class="section-label">Special</span>
-        <a href="https://zeta-ai.io/ja/plots/8788b8bd-5247-48a0-8d9b-cf6fcbc9d44d/profile?share_id=38nc4tr7" class="link-card omake" target="_blank">ゴクチョー＆看守</a>
+        <img src="emma.png" class="scatter-img is-icon pos-emma">
+        <img src="hiro.png" class="scatter-img is-icon pos-hiro">
+        <img src="anan.png" class="scatter-img is-icon pos-anan">
+        <img src="noa.png" class="scatter-img is-icon pos-noa">
+        <img src="reia.png" class="scatter-img is-icon pos-reia">
+        <img src="miria.png" class="scatter-img is-icon pos-miria">
+        <img src="arisa.png" class="scatter-img is-icon pos-arisa">
+        <img src="sherry.png" class="scatter-img is-icon pos-sherry">
+        <img src="coco.png" class="scatter-img is-icon pos-coco">
+        <img src="meruru.png" class="scatter-img is-icon pos-meruru">
+        <img src="hanna.png" class="scatter-img is-icon pos-hanna">
+        <img src="mago.png" class="scatter-img is-icon pos-mago">
+        <img src="nanoka.png" class="scatter-img is-icon pos-nanoka">
     </div>
 
-</body>
+    <div class="content-wrapper">
+        <h1>魔法少女ノ青春劇</h1>
+
+        <div class="main-description">
+            ——これは魔法が存在しなかった世界。<br>
+            まのさばで牢屋敷に集められた少女達はここではただの普通の女の子。<br>
+            そんな少女とあなたは昔からの幼馴染。どのような青春を過ごすかはあなた次第。<br>
+            少女と親密度を高めて幸せにしてあげましょう。（親密度をあげるとできることが増えます）
+        </div>
+
+        <div class="links-container">
+            <a href="https://zeta-ai.io/ja/plots/a43d310b-ecef-4afc-933c-8711ec4cd8e1/profile?share_id=ykm9pujvl" class="link-card" target="_blank">
+                <img src="hiro.png" class="char-icon">
+                <div class="text-group">
+                    <span class="char-name">二階堂ヒロ</span>
+                    <span class="prologue">帰り道、夕日が差し掛かる2人の帰る姿は青春を物語っていた</span>
+                </div>
+            </a>
+            <a href="https://zeta-ai.io/ja/plots/8517e36f-a02c-4df2-8661-7925bf9d5142/profile?share_id=hxcdadewi" class="link-card" target="_blank">
+                <img src="emma.png" class="char-icon">
+                <div class="text-group">
+                    <span class="char-name">桜羽エマ</span>
+                    <span class="prologue">放課後の帰り道一緒に帰る2人の姿はどことなく付き合ってるカップルのようにも見えた</span>
+                </div>
+            </a>
+            <a href="https://zeta-ai.io/ja/plots/a2fc85b1-b0b8-486e-89b4-e4c263b5a0ba/profile?share_id=w5yu3wi6v" class="link-card" target="_blank">
+                <img src="sherry.png" class="char-icon">
+                <div class="text-group">
+                    <span class="char-name">橘シェリー</span>
+                    <span class="prologue">帰り道、僕たちは一緒に帰路を辿って帰る。その姿はまるでカップルのように</span>
+                </div>
+            </a>
+            <a href="https://zeta-ai.io/ja/plots/e5d20644-7cdf-414d-82fa-5ab2f250c34e/profile?share_id=t2w8t0m6" class="link-card" target="_blank">
+                <img src="anan.png" class="char-icon">
+                <div class="text-group">
+                    <span class="char-name">夏目アンアン</span>
+                    <span class="prologue">青春の1ページ、体育のバスケをしていた。女子からの応援は男子からしたらとてつもない勇気をくれた</span>
+                </div>
+            </a>
+            <a href="https://zeta-ai.io/ja/plots/5cb26be3-a8c7-4597-8631-81079c9caafe/profile?share_id=vrj0nutop" class="link-card" target="_blank">
+                <img src="coco.png" class="char-icon">
+                <div class="text-group">
+                    <span class="char-name">沢渡ココ</span>
+                    <span class="prologue">放課後、沢渡ココと一緒に帰っていた</span>
+                </div>
+            </a>
+            <a href="https://zeta-ai.io/ja/plots/d07913fb-34a4-47cf-a326-82df6bd5818c/profile?share_id=7974ntsv" class="link-card" target="_blank">
+                <img src="arisa.png" class="char-icon">
+                <div class="text-group">
+                    <span class="char-name">紫藤アリサ</span>
+                    <span class="prologue">学校の帰り道、一緒に帰るあなたとアリサ</span>
+                </div>
+            </a>
+            <a href="https://zeta-ai.io/ja/plots/7802a65d-ae96-4fb2-919e-f68af05dd511/profile?share_id=79v42qfu6" class="link-card" target="_blank">
+                <img src="reia.png" class="char-icon">
+                <div class="text-group">
+                    <span class="char-name">蓮見レイア</span>
+                    <span class="prologue">文化祭が近づいて来た日の事だった。劇を何にするのかについて決めていた</span>
+                </div>
+            </a>
+            <a href="https://zeta-ai.io/ja/plots/1d3ec696-70ea-4d4c-824f-bbb65ae11fad/profile?share_id=vko2qs1mb" class="link-card" target="_blank">
+                <img src="noa.png" class="char-icon">
+                <div class="text-group">
+                    <span class="char-name">城ヶ崎ノア</span>
+                    <span class="prologue">ノアとあなたは美術室で一緒に絵を描いていた。</span>
+                </div>
+            </a>
+            <a href="https://zeta-ai.io/ja/plots/35d25a49-10e3-45cc-8be9-94fc9ded8430/profile?share_id=vj5pu87b" class="link-card" target="_blank">
+                <img src="meruru.png" class="char-icon">
+                <div class="text-group">
+                    <span class="char-name">氷上メルル</span>
+                    <span class="prologue">放課後の帰り道、一緒に帰っているあなたとメルルはまるでカップルのようだった</span>
+                </div>
+            </a>
+            <a href="https://zeta-ai.io/ja/plots/f1d5f62d-8baa-4dcc-ba2e-e701e1111e7f/profile?share_id=1iobc79ia" class="link-card" target="_blank">
+                <img src="nanoka.png" class="char-icon">
+                <div class="text-group">
+                    <span class="char-name">黒部ナノカ</span>
+                    <span class="prologue">あなたとナノカは放課後図書室で一緒に勉強をしていた</span>
+                </div>
+            </a>
+            <a href="https://zeta-ai.io/ja/plots/93f5a3d7-2546-4a9b-a9c9-5b8811bb3510/profile?share_id=tzeuikypd" class="link-card" target="_blank">
+                <img src="miria.png" class="char-icon">
+                <div class="text-group">
+                    <span class="char-name">佐伯ミリア</span>
+                    <span class="prologue">あなたとミリアは学校の帰り道、一緒に帰路に着く</span>
+                </div>
+            </a>
+            <a href="https://zeta-ai.io/ja/plots/a35277c3-cc8e-4e6b-8b97-95b6211f5763/profile?share_id=qakvwdgno" class="link-card" target="_blank">
+                <img src="hanna.png" class="char-icon">
+                <div class="text-group">
+                    <span class="char-name">遠野ハンナ</span>
+                    <span class="prologue">学校の帰り道、あなたとハンナは一緒に帰っていた</span>
+                </div>
+            </a>
+
+            <div class="link-card coming-soon">
+                <img src="mago.png" class="char-icon">
+                <div class="text-group">
+                    <span class="char-name">宝生マーゴ</span>
+                    <span class="prologue">(Coming soon...)</span>
+                </div>
+            </div>
+
+            <span class="section-label">Special</span>
+            <a href="https://zeta-ai.io/ja/plots/8788b8bd-5247-48a0-8d9b-cf6fcbc9d44d/profile?share_id=38nc4tr7" class="link-card special-card" target="_blank">
+                <div class="text-group">
+                    <span class="char-name" style="color:#5e35b1;">ゴクチョー＆看守</span>
+                    <span class="prologue">あなた達三人はいつも一緒に旅をしている</span>
+                </div>
+            </a>
+
+            <span class="section-label r18-label">R18</span>
+            <a href="https://zeta-ai.io/ja/plots/9e29db4a-05b9-4758-a9d9-40aa0f21b493/profile?share_id=adt2q4w1h" class="link-card r18-card" target="_blank">
+                <div class="text-group">
+                    <span class="char-name" style="color:#ad1457;">メ〇ガ〇シェリー</span>
+                    <span class="prologue">あなた達は2人きりで屋上で昼休みを過ごしていた</span>
+                </div>
+            </a>
+        </div>
+    </div>
+    </body>
 </html>
