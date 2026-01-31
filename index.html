@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>魔法少女ノ青春劇(まのげき) - リンク集</title>
+    
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="favicon.png">
+
     <style>
         /* --- 全体の設定 --- */
         html { scroll-behavior: smooth; }
         body {
             font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-            background: linear-gradient(135deg, #fff5f8 0%, #fce4ec 100%); /* 背景はグラデーションのみ */
+            background: linear-gradient(135deg, #fff5f8 0%, #fce4ec 100%);
             margin: 0;
             padding: 20px;
             display: flex;
@@ -43,16 +47,18 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
-
-        /* --- 目次（TOC） --- */
+        /* --- 目次（TOC）: スマホでもはみ出さないよう調整 --- */
         .toc {
             display: flex; flex-wrap: wrap; justify-content: center;
-            gap: 10px; margin-bottom: 30px;
+            gap: 8px; margin-bottom: 30px;
         }
         .toc a {
             background: #d81b60; color: white; text-decoration: none;
-            padding: 10px 20px; border-radius: 25px; font-size: 0.9rem;
-            font-weight: bold; transition: 0.3s; box-shadow: 0 4px 10px rgba(216, 27, 96, 0.2);
+            padding: 8px 14px; border-radius: 25px; 
+            font-size: 0.8rem; /* 文字を少し小さく */
+            font-weight: bold; transition: 0.3s; 
+            box-shadow: 0 4px 10px rgba(216, 27, 96, 0.2);
+            white-space: nowrap; /* 改行を防ぐ */
         }
         .toc a:hover { transform: translateY(-2px); background: #ad1457; box-shadow: 0 6px 15px rgba(216, 27, 96, 0.3); }
 
@@ -110,7 +116,7 @@
         
         .qa-imgs { display: flex; gap: 10px; margin-top: 15px; }
         .qa-imgs img { width: 100%; border-radius: 12px; border: 1px solid #eee; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .qa-imgs.dual img { width: calc(50% - 5px); } /* 二つ並べる用 */
+        .qa-imgs.dual img { width: calc(50% - 5px); }
 
         footer { font-size: 0.8rem; text-align: center; color: #999; margin-top: 40px; padding-bottom: 30px; }
         footer a { color: #d81b60; text-decoration: none; font-weight: bold; }
@@ -119,7 +125,7 @@
 <body>
 
     <div class="container">
-        <h1>魔法少女ノ青春劇</h1>
+        <h1>魔法少女ノ青春劇(まのげき)</h1>
 
         <div class="intro">
             ——これは魔法が存在しなかった世界。<br>
