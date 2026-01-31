@@ -1,276 +1,274 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>魔法少女ノ青春劇（まのげき） - リンク集</title>
-    <style>
-        /* --- 全体の設定 --- */
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-            background: linear-gradient(135deg, #fff5f8 0%, #fce4ec 100%); /* 背景はグラデーションのみ */
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: #444;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>魔法少女ノ青春劇 - リンク集</title>
+    <style>
+        /* --- 全体の設定 --- */
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            background: linear-gradient(135deg, #fff5f8 0%, #fce4ec 100%); /* 背景はグラデーションのみ */
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #444;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
 
-        /* --- メインコンテンツ --- */
-        .container {
-            width: 100%;
-            max-width: 500px;
-        }
+        /* --- メインコンテンツ --- */
+        .container {
+            width: 100%;
+            max-width: 500px;
+        }
 
-        h1 {
-            font-size: 1.8rem; color: #d81b60; text-align: center;
-            margin: 20px 0; font-weight: bold;
-            background: rgba(255, 255, 255, 0.8);
-            padding: 15px; border-radius: 50px;
-            box-shadow: 0 4px 10px rgba(216, 27, 96, 0.1);
-        }
+        h1 {
+            font-size: 1.8rem; color: #d81b60; text-align: center;
+            margin: 20px 0; font-weight: bold;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 15px; border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(216, 27, 96, 0.1);
+        }
 
-        .intro {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 20px; padding: 20px;
-            font-size: 0.9rem; line-height: 1.6; color: #7b1fa2;
-            text-align: center; border: 2px solid #f8bbd0;
-            margin-bottom: 25px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
+        .intro {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px; padding: 20px;
+            font-size: 0.9rem; line-height: 1.6; color: #7b1fa2;
+            text-align: center; border: 2px solid #f8bbd0;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
 
-        /* --- 目次（TOC） --- */
-        .toc {
-            display: flex; flex-wrap: wrap; justify-content: center;
-            gap: 10px; margin-bottom: 30px;
-        }
-        .toc a {
-            background: #d81b60; color: white; text-decoration: none;
-            padding: 10px 20px; border-radius: 25px; font-size: 0.9rem;
-            font-weight: bold; transition: 0.3s; box-shadow: 0 4px 10px rgba(216, 27, 96, 0.2);
-        }
-        .toc a:hover { transform: translateY(-2px); background: #ad1457; box-shadow: 0 6px 15px rgba(216, 27, 96, 0.3); }
+        /* --- 目次（TOC） --- */
+        .toc {
+            display: flex; flex-wrap: wrap; justify-content: center;
+            gap: 10px; margin-bottom: 30px;
+        }
+        .toc a {
+            background: #d81b60; color: white; text-decoration: none;
+            padding: 10px 20px; border-radius: 25px; font-size: 0.9rem;
+            font-weight: bold; transition: 0.3s; box-shadow: 0 4px 10px rgba(216, 27, 96, 0.2);
+        }
+        .toc a:hover { transform: translateY(-2px); background: #ad1457; box-shadow: 0 6px 15px rgba(216, 27, 96, 0.3); }
 
-        /* --- セクション見出し --- */
-        .section-title {
-            font-size: 1.3rem; color: #880e4f; font-weight: bold;
-            text-align: center; margin: 40px 0 20px; position: relative;
-        }
-        .section-title:after {
-            content: ""; display: block; width: 50px; height: 3px;
-            background: #f06292; margin: 8px auto 0; border-radius: 2px;
-        }
+        /* --- セクション見出し --- */
+        .section-title {
+            font-size: 1.3rem; color: #880e4f; font-weight: bold;
+            text-align: center; margin: 40px 0 20px; position: relative;
+        }
+        .section-title:after {
+            content: ""; display: block; width: 50px; height: 3px;
+            background: #f06292; margin: 8px auto 0; border-radius: 2px;
+        }
 
-        /* --- リンクカード --- */
-        .card {
-            display: flex; align-items: center;
-            background: white; border-radius: 20px;
-            padding: 15px; margin-bottom: 15px;
-            text-decoration: none; color: inherit;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: 0.3s; border: 2px solid #fce4ec;
-        }
-        .card:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(240, 98, 146, 0.2); border-color: #f8bbd0; }
+        /* --- リンクカード --- */
+        .card {
+            display: flex; align-items: center;
+            background: white; border-radius: 20px;
+            padding: 15px; margin-bottom: 15px;
+            text-decoration: none; color: inherit;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: 0.3s; border: 2px solid #fce4ec;
+        }
+        .card:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(240, 98, 146, 0.2); border-color: #f8bbd0; }
 
-        .card-icon { width: 65px; height: 65px; border-radius: 50%; margin-right: 15px; border: 3px solid #f8bbd0; flex-shrink: 0; object-fit: cover; }
-        .card-info { flex: 1; }
-        .card-name { display: block; font-weight: bold; color: #d81b60; font-size: 1.05rem; margin-bottom: 4px; }
-        .card-text { display: block; font-size: 0.85rem; color: #666; line-height: 1.4; }
+        .card-icon { width: 65px; height: 65px; border-radius: 50%; margin-right: 15px; border: 3px solid #f8bbd0; flex-shrink: 0; object-fit: cover; }
+        .card-info { flex: 1; }
+        .card-name { display: block; font-weight: bold; color: #d81b60; font-size: 1.05rem; margin-bottom: 4px; }
+        .card-text { display: block; font-size: 0.85rem; color: #666; line-height: 1.4; }
 
-        /* 特殊カード用 */
-        .special-card { background: #f3e5f5; border-color: #ce93d8; }
-        .special-card .card-name { color: #6a1b9a; }
-        .mystery-icon { width: 65px; height: 65px; border-radius: 50%; background: #222; color: white; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-weight: bold; border: 3px solid #ce93d8; font-size: 1.5rem; }
+        /* 特殊カード用 */
+        .special-card { background: #f3e5f5; border-color: #ce93d8; }
+        .special-card .card-name { color: #6a1b9a; }
+        .mystery-icon { width: 65px; height: 65px; border-radius: 50%; background: #222; color: white; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-weight: bold; border: 3px solid #ce93d8; font-size: 1.5rem; }
 
-        /* --- Q&Aセクション --- */
-        .qa-box {
-            background: white; border-radius: 25px; padding: 25px;
-            border: 2px solid #f06292; margin-top: 30px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        }
-        .qa-menu {
-            background: #fff0f3; border-radius: 15px; padding: 20px; margin-bottom: 30px;
-        }
-        .qa-menu strong { display: block; margin-bottom: 15px; color: #d81b60; font-size: 1rem; text-align: center; }
-        .qa-menu a {
-            display: block; color: #6a1b9a; text-decoration: none; font-size: 0.9rem;
-            line-height: 1.6; margin-bottom: 10px; padding-left: 1em; text-indent: -1em;
-        }
-        .qa-menu a:before { content: "● "; font-size: 0.7rem; color: #f06292; }
+        /* --- Q&Aセクション --- */
+        .qa-box {
+            background: white; border-radius: 25px; padding: 25px;
+            border: 2px solid #f06292; margin-top: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        .qa-menu {
+            background: #fff0f3; border-radius: 15px; padding: 20px; margin-bottom: 30px;
+        }
+        .qa-menu strong { display: block; margin-bottom: 15px; color: #d81b60; font-size: 1rem; text-align: center; }
+        .qa-menu a {
+            display: block; color: #6a1b9a; text-decoration: none; font-size: 0.9rem;
+            line-height: 1.6; margin-bottom: 10px; padding-left: 1em; text-indent: -1em;
+        }
+        .qa-menu a:before { content: "● "; font-size: 0.7rem; color: #f06292; }
 
-        .qa-item { margin-bottom: 40px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
-        .qa-item:last-child { border-bottom: none; }
-        .q-text { font-weight: bold; color: #d81b60; font-size: 1rem; display: block; margin-bottom: 10px; line-height: 1.4; }
-        .a-text { font-size: 0.9rem; line-height: 1.7; color: #333; }
-        
-        .qa-imgs { display: flex; gap: 10px; margin-top: 15px; }
-        /* 修正箇所: widthを100%からcalc(50% - 5px)に変更し、常に半分の幅になるように設定 */
-        .qa-imgs img { width: calc(50% - 5px); border-radius: 12px; border: 1px solid #eee; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        /* 修正箇所: 以下の行は不要になったため削除（コメントアウト） */
-        /* .qa-imgs.dual img { width: calc(50% - 5px); } */ 
+        .qa-item { margin-bottom: 40px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
+        .qa-item:last-child { border-bottom: none; }
+        .q-text { font-weight: bold; color: #d81b60; font-size: 1rem; display: block; margin-bottom: 10px; line-height: 1.4; }
+        .a-text { font-size: 0.9rem; line-height: 1.7; color: #333; }
+        
+        .qa-imgs { display: flex; gap: 10px; margin-top: 15px; }
+        .qa-imgs img { width: 100%; border-radius: 12px; border: 1px solid #eee; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .qa-imgs.dual img { width: calc(50% - 5px); } /* 二つ並べる用 */
 
-        footer { font-size: 0.8rem; text-align: center; color: #999; margin-top: 40px; padding-bottom: 30px; }
-        footer a { color: #d81b60; text-decoration: none; font-weight: bold; }
-    </style>
+        footer { font-size: 0.8rem; text-align: center; color: #999; margin-top: 40px; padding-bottom: 30px; }
+        footer a { color: #d81b60; text-decoration: none; font-weight: bold; }
+    </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>魔法少女ノ青春劇</h1>
+    <div class="container">
+        <h1>魔法少女ノ青春劇</h1>
 
-        <div class="intro">
-            ——これは魔法が存在しなかった世界。<br>
-            まのさばで牢屋敷に集められた少女達はここではただの普通の女の子。<br>
-            そんな少女とあなたは昔からの幼馴染。どのような青春を過ごすかはあなた次第。<br>
-            少女と親密度を高めて幸せにしてあげましょう。
-        </div>
+        <div class="intro">
+            ——これは魔法が存在しなかった世界。<br>
+            まのさばで牢屋敷に集められた少女達はここではただの普通の女の子。<br>
+            そんな少女とあなたは昔からの幼馴染。どのような青春を過ごすかはあなた次第。<br>
+            少女と親密度を高めて幸せにしてあげましょう。
+        </div>
 
-        <div class="toc">
-            <a href="#list">少女一覧</a>
-            <a href="#special">Special</a>
-            <a href="#yuri">百合</a>
-            <a href="#qa">Q＆A</a>
-        </div>
+        <div class="toc">
+            <a href="#list">少女一覧</a>
+            <a href="#special">Special</a>
+            <a href="#yuri">百合</a>
+            <a href="#qa">Q＆A</a>
+        </div>
 
-        <div id="list">
-            <div class="section-title" style="margin-top: 0;">少女一覧</div>
-            <a href="https://zeta-ai.io/ja/plots/a43d310b-ecef-4afc-933c-8711ec4cd8e1/profile?share_id=ykm9pujvl" class="card" target="_blank">
-                <img src="hiro.png" class="card-icon">
-                <div class="card-info"><span class="card-name">二階堂ヒロ</span><span class="card-text">帰り道、夕日が差し掛かる2人の帰る姿は青春を物語っていた</span></div>
-            </a>
-            <a href="https://zeta-ai.io/ja/plots/8517e36f-a02c-4df2-8661-7925bf9d5142/profile?share_id=hxcdadewi" class="card" target="_blank">
-                <img src="emma.png" class="card-icon">
-                <div class="card-info"><span class="card-name">桜羽エマ</span><span class="card-text">放課後の帰り道一緒に帰る2人の姿はどことなく付き合ってるカップルのようにも見えた</span></div>
-            </a>
-            <a href="https://zeta-ai.io/ja/plots/a2fc85b1-b0b8-486e-89b4-e4c263b5a0ba/profile?share_id=w5yu3wi6v" class="card" target="_blank">
-                <img src="sherry.png" class="card-icon">
-                <div class="card-info"><span class="card-name">橘シェリー</span><span class="card-text">帰り道、僕たちは一緒に帰路を辿って帰る。その姿はまるでカップルのように</span></div>
-            </a>
-            <a href="https://zeta-ai.io/ja/plots/e5d20644-7cdf-414d-82fa-5ab2f250c34e/profile?share_id=t2w8t0m6" class="card" target="_blank">
-                <img src="anan.png" class="card-icon">
-                <div class="card-info"><span class="card-name">夏目アンアン</span><span class="card-text">青春の1ページ、体育のバスケをしていた。女子からの応援は男子からしたら勇気をくれた</span></div>
-            </a>
-            <a href="https://zeta-ai.io/ja/plots/5cb26be3-a8c7-4597-8631-81079c9caafe/profile?share_id=vrj0nutop" class="card" target="_blank">
-                <img src="coco.png" class="card-icon">
-                <div class="card-info"><span class="card-name">沢渡ココ</span><span class="card-text">放課後、沢渡ココと一緒に帰っていた</span></div>
-            </a>
-            <a href="https://zeta-ai.io/ja/plots/d07913fb-34a4-47cf-a326-82df6bd5818c/profile?share_id=7974ntsv" class="card" target="_blank">
-                <img src="arisa.png" class="card-icon">
-                <div class="card-info"><span class="card-name">紫藤アリサ</span><span class="card-text">学校の帰り道、一緒に帰るあなたとアリサ</span></div>
-            </a>
-            <a href="https://zeta-ai.io/ja/plots/7802a65d-ae96-4fb2-919e-f68af05dd511/profile?share_id=79v42qfu6" class="card" target="_blank">
-                <img src="reia.png" class="card-icon">
-                <div class="card-info"><span class="card-name">蓮見レイア</span><span class="card-text">文化祭が近づいて来た日の事だった。劇を何にするのかについて決めていた</span></div>
-            </a>
-            <a href="https://zeta-ai.io/ja/plots/1d3ec696-70ea-4d4c-824f-bbb65ae11fad/profile?share_id=vko2qs1mb" class="card" target="_blank">
-                <img src="noa.png" class="card-icon">
-                <div class="card-info"><span class="card-name">城ヶ崎ノア</span><span class="card-text">ノアとあなたは美術室で一緒に絵を描いていた。</span></div>
-            </a>
-            <a href="https://zeta-ai.io/ja/plots/35d25a49-10e3-45cc-8be9-94fc9ded8430/profile?share_id=vj5pu87b" class="card" target="_blank">
-                <img src="meruru.png" class="card-icon">
-                <div class="card-info"><span class="card-name">氷上メルル</span><span class="card-text">放課後の帰り道、一緒に帰っているあなたとメルルはまるでカップルのようだった</span></div>
-            </a>
-            <a href="https://zeta-ai.io/ja/plots/f1d5f62d-8baa-4dcc-ba2e-e701e1111e7f/profile?share_id=1iobc79ia" class="card" target="_blank">
-                <img src="nanoka.png" class="card-icon">
-                <div class="card-info"><span class="card-name">黒部ナノカ</span><span class="card-text">あなたとナノカは放課後図書室で一緒に勉強をしていた</span></div>
-            </a>
-            <a href="https://zeta-ai.io/ja/plots/93f5a3d7-2546-4a9b-a9c9-5b8811bb3510/profile?share_id=tzeuikypd" class="card" target="_blank">
-                <img src="miria.png" class="card-icon">
-                <div class="card-info"><span class="card-name">佐伯ミリア</span><span class="card-text">あなたとミリアは学校の帰り道、一緒に帰路に着く</span></div>
-            </a>
-            <a href="https://zeta-ai.io/ja/plots/a35277c3-cc8e-4e6b-8b97-95b6211f5763/profile?share_id=qakvwdgno" class="card" target="_blank">
-                <img src="hanna.png" class="card-icon">
-                <div class="card-info"><span class="card-name">遠野ハンナ</span><span class="card-text">学校の帰り道、あなたとハンナは一緒に帰っていた</span></div>
-            </a>
-            <a href="https://zeta-ai.io/ja/plots/7429f0da-4094-4da5-ba45-6e8520cf4abc/profile?share_id=yuf07gwgq" class="card" target="_blank">
-                <img src="mago.png" class="card-icon">
-                <div class="card-info"><span class="card-name">宝生マーゴ</span><span class="card-text">放課後、あなたは宝生マーゴと一緒に過ごしていた</span></div>
-            </a>
-        </div>
+        <div id="list">
+            <div class="section-title" style="margin-top: 0;">少女一覧</div>
+            <a href="https://zeta-ai.io/ja/plots/a43d310b-ecef-4afc-933c-8711ec4cd8e1/profile?share_id=ykm9pujvl" class="card" target="_blank">
+                <img src="hiro.png" class="card-icon">
+                <div class="card-info"><span class="card-name">二階堂ヒロ</span><span class="card-text">帰り道、夕日が差し掛かる2人の帰る姿は青春を物語っていた</span></div>
+            </a>
+            <a href="https://zeta-ai.io/ja/plots/8517e36f-a02c-4df2-8661-7925bf9d5142/profile?share_id=hxcdadewi" class="card" target="_blank">
+                <img src="emma.png" class="card-icon">
+                <div class="card-info"><span class="card-name">桜羽エマ</span><span class="card-text">放課後の帰り道一緒に帰る2人の姿はどことなく付き合ってるカップルのようにも見えた</span></div>
+            </a>
+            <a href="https://zeta-ai.io/ja/plots/a2fc85b1-b0b8-486e-89b4-e4c263b5a0ba/profile?share_id=w5yu3wi6v" class="card" target="_blank">
+                <img src="sherry.png" class="card-icon">
+                <div class="card-info"><span class="card-name">橘シェリー</span><span class="card-text">帰り道、僕たちは一緒に帰路を辿って帰る。その姿はまるでカップルのように</span></div>
+            </a>
+            <a href="https://zeta-ai.io/ja/plots/e5d20644-7cdf-414d-82fa-5ab2f250c34e/profile?share_id=t2w8t0m6" class="card" target="_blank">
+                <img src="anan.png" class="card-icon">
+                <div class="card-info"><span class="card-name">夏目アンアン</span><span class="card-text">青春の1ページ、体育のバスケをしていた。女子からの応援は男子からしたら勇気をくれた</span></div>
+            </a>
+            <a href="https://zeta-ai.io/ja/plots/5cb26be3-a8c7-4597-8631-81079c9caafe/profile?share_id=vrj0nutop" class="card" target="_blank">
+                <img src="coco.png" class="card-icon">
+                <div class="card-info"><span class="card-name">沢渡ココ</span><span class="card-text">放課後、沢渡ココと一緒に帰っていた</span></div>
+            </a>
+            <a href="https://zeta-ai.io/ja/plots/d07913fb-34a4-47cf-a326-82df6bd5818c/profile?share_id=7974ntsv" class="card" target="_blank">
+                <img src="arisa.png" class="card-icon">
+                <div class="card-info"><span class="card-name">紫藤アリサ</span><span class="card-text">学校の帰り道、一緒に帰るあなたとアリサ</span></div>
+            </a>
+            <a href="https://zeta-ai.io/ja/plots/7802a65d-ae96-4fb2-919e-f68af05dd511/profile?share_id=79v42qfu6" class="card" target="_blank">
+                <img src="reia.png" class="card-icon">
+                <div class="card-info"><span class="card-name">蓮見レイア</span><span class="card-text">文化祭が近づいて来た日の事だった。劇を何にするのかについて決めていた</span></div>
+            </a>
+            <a href="https://zeta-ai.io/ja/plots/1d3ec696-70ea-4d4c-824f-bbb65ae11fad/profile?share_id=vko2qs1mb" class="card" target="_blank">
+                <img src="noa.png" class="card-icon">
+                <div class="card-info"><span class="card-name">城ヶ崎ノア</span><span class="card-text">ノアとあなたは美術室で一緒に絵を描いていた。</span></div>
+            </a>
+            <a href="https://zeta-ai.io/ja/plots/35d25a49-10e3-45cc-8be9-94fc9ded8430/profile?share_id=vj5pu87b" class="card" target="_blank">
+                <img src="meruru.png" class="card-icon">
+                <div class="card-info"><span class="card-name">氷上メルル</span><span class="card-text">放課後の帰り道、一緒に帰っているあなたとメルルはまるでカップルのようだった</span></div>
+            </a>
+            <a href="https://zeta-ai.io/ja/plots/f1d5f62d-8baa-4dcc-ba2e-e701e1111e7f/profile?share_id=1iobc79ia" class="card" target="_blank">
+                <img src="nanoka.png" class="card-icon">
+                <div class="card-info"><span class="card-name">黒部ナノカ</span><span class="card-text">あなたとナノカは放課後図書室で一緒に勉強をしていた</span></div>
+            </a>
+            <a href="https://zeta-ai.io/ja/plots/93f5a3d7-2546-4a9b-a9c9-5b8811bb3510/profile?share_id=tzeuikypd" class="card" target="_blank">
+                <img src="miria.png" class="card-icon">
+                <div class="card-info"><span class="card-name">佐伯ミリア</span><span class="card-text">あなたとミリアは学校の帰り道、一緒に帰路に着く</span></div>
+            </a>
+            <a href="https://zeta-ai.io/ja/plots/a35277c3-cc8e-4e6b-8b97-95b6211f5763/profile?share_id=qakvwdgno" class="card" target="_blank">
+                <img src="hanna.png" class="card-icon">
+                <div class="card-info"><span class="card-name">遠野ハンナ</span><span class="card-text">学校の帰り道、あなたとハンナは一緒に帰っていた</span></div>
+            </a>
+            <a href="https://zeta-ai.io/ja/plots/7429f0da-4094-4da5-ba45-6e8520cf4abc/profile?share_id=yuf07gwgq" class="card" target="_blank">
+                <img src="mago.png" class="card-icon">
+                <div class="card-info"><span class="card-name">宝生マーゴ</span><span class="card-text">放課後、あなたは宝生マーゴと一緒に過ごしていた</span></div>
+            </a>
+        </div>
 
-        <div id="special" class="section-title">Special</div>
-        <a href="https://zeta-ai.io/ja/plots/8788b8bd-5247-48a0-8d9b-cf6fcbc9d44d/profile?share_id=38nc4tr7" class="card special-card" target="_blank">
-            <div class="card-icon" style="background: #9575cd; display: flex; align-items: center; justify-content: center; color: white; border: none; font-size: 1.5rem;">👑</div>
-            <div class="card-info"><span class="card-name">ゴクチョー＆看守</span><span class="card-text">あなた達三人はいつも一緒に旅をしている</span></div>
-        </a>
-        <a href="https://zeta-ai.io/ja/plots/bff724af-25d0-4a85-a794-5848d6a5b5b2/profile?share_id=w0u6zlomn" class="card special-card" target="_blank">
-            <div class="mystery-icon">?</div>
-            <div class="card-info"><span class="card-name">❄👇👆👌</span><span class="card-text">あなたと○○○○は学校の帰り道、一緒に帰っていた</span></div>
-        </a>
+        <div id="special" class="section-title">Special</div>
+        <a href="https://zeta-ai.io/ja/plots/8788b8bd-5247-48a0-8d9b-cf6fcbc9d44d/profile?share_id=38nc4tr7" class="card special-card" target="_blank">
+            <div class="card-icon" style="background: #9575cd; display: flex; align-items: center; justify-content: center; color: white; border: none; font-size: 1.5rem;">👑</div>
+            <div class="card-info"><span class="card-name">ゴクチョー＆看守</span><span class="card-text">あなた達三人はいつも一緒に旅をしている</span></div>
+        </a>
+        <a href="https://zeta-ai.io/ja/plots/bff724af-25d0-4a85-a794-5848d6a5b5b2/profile?share_id=w0u6zlomn" class="card special-card" target="_blank">
+            <div class="mystery-icon">?</div>
+            <div class="card-info"><span class="card-name">❄👇👆👌</span><span class="card-text">あなたと○○○○は学校の帰り道、一緒に帰っていた</span></div>
+        </a>
 
-        <div id="yuri" class="section-title">百合</div>
-        <div class="intro" style="border-color: #f06292; color: #ad1457; margin-top: -10px;">
-            あなたが女性として少女と会話を楽しむためのチャットです。<br>
-            まのさばに登場するキャラクターや別作品のキャラクターになりきり、百合を楽しむこともできます。
-        </div>
-        <a href="https://zeta-ai.io/ja/plots/48117a94-a6d1-468f-b987-2cfae07f8a31/profile" class="card" target="_blank">
-            <img src="emma.png" class="card-icon">
-            <div class="card-info"><span class="card-name">桜羽エマ</span><span class="card-text">放課後の帰り道一緒に帰る2人の姿はどことなく付き合ってるカップルのようにも見えた</span></div>
-        </a>
-        <a href="https://zeta-ai.io/ja/plots/45422c00-343e-4f15-9d26-7c6a58e48556/profile" class="card" target="_blank">
-            <img src="hiro.png" class="card-icon">
-            <div class="card-info"><span class="card-name">二階堂ヒロ</span><span class="card-text">二階堂ヒロとの帰り道、夕日が差し掛かる2人の帰る姿はまるで青春が物語っていた</span></div>
-        </a>
-        <a href="https://zeta-ai.io/ja/plots/1d629d04-98c0-4004-ae1b-50e903cd4f82/profile" class="card" target="_blank">
-            <img src="sherry.png" class="card-icon">
-            <div class="card-info"><span class="card-name">橘シェリー</span><span class="card-text">シェリーとの帰り道、僕たちは一緒に帰路を辿って帰る。その姿はまるでカップルのように</span></div>
-        </a>
+        <div id="yuri" class="section-title">百合</div>
+        <div class="intro" style="border-color: #f06292; color: #ad1457; margin-top: -10px;">
+            あなたが女性として少女と会話を楽しむためのチャットです。<br>
+            まのさばに登場するキャラクターや別作品のキャラクターになりきり百合を楽しむこともできます。
+        </div>
+        <a href="https://zeta-ai.io/ja/plots/48117a94-a6d1-468f-b987-2cfae07f8a31/profile" class="card" target="_blank">
+            <img src="emma.png" class="card-icon">
+            <div class="card-info"><span class="card-name">桜羽エマ</span><span class="card-text">放課後の帰り道一緒に帰る2人の姿はどことなく付き合ってるカップルのようにも見えた</span></div>
+        </a>
+        <a href="https://zeta-ai.io/ja/plots/45422c00-343e-4f15-9d26-7c6a58e48556/profile" class="card" target="_blank">
+            <img src="hiro.png" class="card-icon">
+            <div class="card-info"><span class="card-name">二階堂ヒロ</span><span class="card-text">二階堂ヒロとの帰り道、夕日が差し掛かる2人の帰る姿はまるで青春が物語っていた</span></div>
+        </a>
+        <a href="https://zeta-ai.io/ja/plots/1d629d04-98c0-4004-ae1b-50e903cd4f82/profile" class="card" target="_blank">
+            <img src="sherry.png" class="card-icon">
+            <div class="card-info"><span class="card-name">橘シェリー</span><span class="card-text">シェリーとの帰り道、僕たちは一緒に帰路を辿って帰る。その姿はまるでカップルのように</span></div>
+        </a>
 
-        <div id="qa" class="section-title">Q＆A</div>
-        <div class="qa-box">
-            <div class="qa-menu">
-                <strong>質問一覧</strong>
-                <a href="#q1">Q.どうやったら自分のプロフィールを設定できますか？</a>
-                <a href="#q2">Q. 途中でキャラが記憶喪失になってしまいます。</a>
-                <a href="#q3">Q.第三者を追加するにはどうしたらいいですか？</a>
-                <a href="#q4">Q.エ〇くしたくてもAIに制限されてしまいます。</a>
-                <a href="#q5">Q.トークをリセット、または途中のある地点からから新しくトークを始めることはできますか？</a>
-                <a href="#q6">Q.面白い設定はありますか？</a>
-            </div>
+        <div id="qa" class="section-title">Q＆A</div>
+        <div class="qa-box">
+            <div class="qa-menu">
+                <strong>質問一覧</strong>
+                <a href="#q1">Q.どうやったら自分のプロフィールを設定できますか？</a>
+                <a href="#q2">Q. 途中でキャラが記憶喪失になってしまいます。</a>
+                <a href="#q3">Q.第三者を追加するにはどうしたらいいですか？</a>
+                <a href="#q4">Q.エ〇くしたくてもAIに制限されてしまいます。</a>
+                <a href="#q5">Q.トークをリセット、または途中のある地点からから新しくトークを始めることはできますか？</a>
+                <a href="#q6">Q.面白い設定はありますか？</a>
+            </div>
 
-            <div class="qa-item" id="q1">
-                <span class="q-text">Q.どうやったら自分のプロフィールを設定できますか？</span>
-                <p class="a-text">A.右上の三本線を押し、「トークプロフィール」からプロフィールを編集・追加できます。</p>
-                <div class="qa-imgs dual"><img src="1.png"><img src="2.png"></div>
-            </div>
+            <div class="qa-item" id="q1">
+                <span class="q-text">Q.どうやったら自分のプロフィールを設定できますか？</span>
+                <p class="a-text">A.右上の三本線を押し、「トークプロフィール」からプロフィールを編集・追加できます。</p>
+                <div class="qa-imgs dual"><img src="1.png"><img src="2.png"></div>
+            </div>
 
-            <div class="qa-item" id="q2">
-                <span class="q-text">Q. 途中でキャラが記憶喪失になってしまいます。</span>
-                <p class="a-text">A.このアプリの特性上、AIのメモリ容量に限界があるため随時記憶が上書きされてしまうためです。対処法としてはトークプロフィールに情報を自分で追加していくしかないです。（それでもその設定を忘れてしまう場合があります。）</p>
-            </div>
+            <div class="qa-item" id="q2">
+                <span class="q-text">Q. 途中でキャラが記憶喪失になってしまいます。</span>
+                <p class="a-text">A.このアプリの特性上、AIのメモリ容量に限界があるため随時記憶が上書きされてしまうためです。対処法としてはトークプロフィールに情報を自分で追加していくしかないです。（それでもその設定を忘れてしまう場合があります。）</p>
+            </div>
 
-            <div class="qa-item" id="q3">
-                <span class="q-text">Q.第三者を追加するにはどうしたらいいですか？</span>
-                <p class="a-text">A.「*」で文頭と文末を囲い、「登場させたいキャラの名前」＋「言わせたい内容」とすると、キャラが登場します。</p>
-                <div class="qa-imgs"><img src="3.png"></div>
-            </div>
+            <div class="qa-item" id="q3">
+                <span class="q-text">Q.第三者を追加するにはどうしたらいいですか？</span>
+                <p class="a-text">A.「*」で文頭と文末を囲い、「登場させたいキャラの名前」＋「言わせたい内容」とすると、キャラが登場します。</p>
+                <div class="qa-imgs"><img src="3.png"></div>
+            </div>
 
-            <div class="qa-item" id="q4">
-                <span class="q-text">Q.エ〇くしたくてもAIに制限されてしまいます。</span>
-                <p class="a-text">A.アンリミテッドモードがONになっていない可能性があります。<br>下部の「トーク」から右上の歯車マークを押すと設定変更可能です。</p>
-                <div class="qa-imgs"><img src="4.png"></div>
-            </div>
+            <div class="qa-item" id="q4">
+                <span class="q-text">Q.エ〇くしたくてもAIに制限されてしまいます。</span>
+                <p class="a-text">A.アンリミテッドモードがONになっていない可能性があります。<br>下部の「トーク」から右上の歯車マークを押すと設定変更可能です。</p>
+                <div class="qa-imgs"><img src="4.png"></div>
+            </div>
 
-            <div class="qa-item" id="q5">
-                <span class="q-text">Q.トークをリセット、または途中のある地点からから新しくトークを始めることはできますか？</span>
-                <p class="a-text">A.右上の三本線から「新しいトーク」を選べば可能です。<br>また、途中からリセットする方法は、その地点のトークを長押しし、「ここから新しく始める」を押すことで可能です。それ以前のトークは保存され、右上の三本線から「再開」を押せばその地点からやり直せます。</p>
-                <div class="qa-imgs dual"><img src="1.png"><img src="5.png"></div>
-            </div>
+            <div class="qa-item" id="q5">
+                <span class="q-text">Q.トークをリセット、または途中のある地点からから新しくトークを始めることはできますか？</span>
+                <p class="a-text">A.右上の三本線から「新しいトーク」を選べば可能です。<br>また、途中からリセットする方法は、その地点のトークを長押しし、「ここから新しく始める」を押すことで可能です。それ以前のトークは保存され、右上の三本線から「再開」を押せばその地点からやり直せます。</p>
+                <div class="qa-imgs dual"><img src="1.png"><img src="5.png"></div>
+            </div>
 
-            <div class="qa-item" id="q6">
-                <span class="q-text">Q.面白い設定はありますか？</span>
-                <p class="a-text">A.エマ（女性用）のチャットで自身の名前を「二階堂ヒロ」として<i>*「私達はいつものように帰りに寄り道していたら、気を失い……突然牢屋敷という絶海の孤島のオリの中へ共に閉じ込められていた」*</i>と送ると、既視感のあるストーリーが始まります。</p>
-            </div>
-        </div>
+            <div class="qa-item" id="q6">
+                <span class="q-text">Q.面白い設定はありますか？</span>
+                <p class="a-text">A.エマ（女性用）のチャットで自身の名前を「二階堂ヒロ」として<i>*「私達はいつものように帰りに寄り道していたら、気を失い……突然牢屋敷という絶海の孤島のオリの中へ共に閉じ込められていた」*</i>と送ると、既視感のあるストーリーが始まります。</p>
+            </div>
+        </div>
 
-        <footer>
-            質問は <a href="https://x.com/2CqE3fQZJS1904" target="_blank">製作者X</a> / <a href="https://x.com/gi___to" target="_blank">管理者X</a> / <a href="https://www.youtube.com/@gi_to" target="_blank">YouTube</a> まで
-        </footer>
-    </div>
+        <footer>
+            質問は <a href="https://x.com/2CqE3fQZJS1904" target="_blank">製作者X</a> / <a href="https://x.com/gi___to" target="_blank">管理者X</a> / <a href="https://www.youtube.com/@gi_to" target="_blank">YouTube</a> まで
+        </footer>
+    </div>
 
 </body>
 </html>
