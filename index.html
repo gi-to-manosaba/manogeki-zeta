@@ -7,10 +7,9 @@
     
     <link rel="icon" href="favicon.png" type="image/png">
     <link rel="apple-touch-icon" href="favicon.png">
-<link rel="icon" href="favicon.png?v=1" type="image/png">
-<link rel="apple-touch-icon" href="favicon.png?v=1">
+    <link rel="icon" href="favicon.png?v=1" type="image/png">
+    <link rel="apple-touch-icon" href="favicon.png?v=1">
 
-    
     <style>
         /* --- 全体の設定 --- */
         html { scroll-behavior: smooth; }
@@ -27,7 +26,6 @@
             overflow-x: hidden;
         }
 
-        /* --- メインコンテンツ --- */
         .container {
             width: 100%;
             max-width: 500px;
@@ -50,7 +48,6 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
-        /* --- 目次（TOC）: スマホでもはみ出さないよう調整 --- */
         .toc {
             display: flex; flex-wrap: wrap; justify-content: center;
             gap: 8px; margin-bottom: 30px;
@@ -58,14 +55,13 @@
         .toc a {
             background: #d81b60; color: white; text-decoration: none;
             padding: 8px 14px; border-radius: 25px; 
-            font-size: 0.8rem; /* 文字を少し小さく */
+            font-size: 0.8rem;
             font-weight: bold; transition: 0.3s; 
             box-shadow: 0 4px 10px rgba(216, 27, 96, 0.2);
-            white-space: nowrap; /* 改行を防ぐ */
+            white-space: nowrap;
         }
         .toc a:hover { transform: translateY(-2px); background: #ad1457; box-shadow: 0 6px 15px rgba(216, 27, 96, 0.3); }
 
-        /* --- セクション見出し --- */
         .section-title {
             font-size: 1.3rem; color: #880e4f; font-weight: bold;
             text-align: center; margin: 40px 0 20px; position: relative;
@@ -75,7 +71,6 @@
             background: #f06292; margin: 8px auto 0; border-radius: 2px;
         }
 
-        /* --- リンクカード --- */
         .card {
             display: flex; align-items: center;
             background: white; border-radius: 20px;
@@ -91,12 +86,10 @@
         .card-name { display: block; font-weight: bold; color: #d81b60; font-size: 1.05rem; margin-bottom: 4px; }
         .card-text { display: block; font-size: 0.85rem; color: #666; line-height: 1.4; }
 
-        /* 特殊カード用 */
         .special-card { background: #f3e5f5; border-color: #ce93d8; }
         .special-card .card-name { color: #6a1b9a; }
         .mystery-icon { width: 65px; height: 65px; border-radius: 50%; background: #222; color: white; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-weight: bold; border: 3px solid #ce93d8; font-size: 1.5rem; }
 
-        /* --- Q&Aセクション --- */
         .qa-box {
             background: white; border-radius: 25px; padding: 25px;
             border: 2px solid #f06292; margin-top: 30px;
@@ -142,6 +135,7 @@
             <a href="#special">Special</a>
             <a href="#yuri">百合</a>
             <a href="#qa">Q＆A</a>
+            <a href="#bbs">掲示板</a>
         </div>
 
         <div id="list">
@@ -274,6 +268,21 @@
                 <p class="a-text">A.エマ（女性用）のチャットで自身の名前を「二階堂ヒロ」として<i>*「私達はいつものように帰りに寄り道していたら、気を失い……突然牢屋敷という絶海の孤島のオリの中へ共に閉じ込められていた」*</i>と送ると、既視感のあるストーリーが始まります。（掲示板の投稿を参考）</p>
             </div>
         </div>
+
+<div id="bbs" class="section-title">掲示板</div>
+
+<div style="width: 100%; background: white; border-radius: 25px; padding: 10px; border: 2px solid #f06292; box-shadow: 0 5px 20px rgba(0,0,0,0.08); box-sizing: border-box;">
+    <iframe src="https://z.wikiwiki.jp/manogeki-zeta/" 
+            style="width: 100%; height: 600px; border: none; border-radius: 15px;"
+            title="掲示板">
+    </iframe>
+</div>
+
+<div style="text-align: center; margin-top: 15px;">
+    <a href="https://z.wikiwiki.jp/manogeki-zeta/" target="_blank" style="color: #d81b60; font-size: 0.8rem; text-decoration: none; font-weight: bold;">
+        ▶ 掲示板を別ウィンドウで開く
+    </a>
+</div>
 
         <footer>
             質問は <a href="https://x.com/2CqE3fQZJS1904" target="_blank">製作者X</a> / <a href="https://x.com/gi___to" target="_blank">管理者X</a> / <a href="https://www.youtube.com/@gi_to" target="_blank">YouTube</a> まで
