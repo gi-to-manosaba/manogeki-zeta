@@ -8,10 +8,10 @@
     <link rel="icon" href="favicon.png" type="image/png">
     <link rel="apple-touch-icon" href="favicon.png">
 
-    <script src="https://unpkg.com/@lyket/widget@latest/dist/lyket.js?apiKey=Pt_68b255555c772500b434d6e1555667"></script>
+    <script src="https://unpkg.com/@lyket/widget@latest/dist/lyket.js?apiKey=pt_68b255555c772500b434d6e1555667"></script>
 
     <style>
-        /* --- 元のCSSを完全継承 --- */
+        /* --- デザイン設定（変更なし） --- */
         html { scroll-behavior: smooth; }
         body {
             font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
@@ -51,8 +51,6 @@
         .section-title:after {
             content: ""; display: block; width: 50px; height: 3px; background: #f06292; margin: 8px auto 0; border-radius: 2px;
         }
-
-        /* --- アンケートボタンを正常に動かすためのカード修正 --- */
         .card-wrapper {
             background: white; border-radius: 20px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.08);
             transition: 0.3s; border: 2px solid #fce4ec; overflow: hidden;
@@ -63,25 +61,18 @@
         .card-info { flex: 1; }
         .card-name { display: block; font-weight: bold; color: #d81b60; font-size: 1.05rem; margin-bottom: 4px; }
         .card-text { display: block; font-size: 0.85rem; color: #666; line-height: 1.4; }
-
-        /* アンケートエリア */
         .survey-area {
             display: flex; justify-content: space-around; padding: 10px; background: #fffcfd; border-top: 1px dashed #f8bbd0;
         }
         .survey-item { display: flex; flex-direction: column; align-items: center; flex: 1; }
         .survey-label { font-size: 0.65rem; font-weight: bold; color: #999; margin-bottom: -5px; }
-        /* Lyketボタンのサイズ微調整 */
         [data-lyket-type] { transform: scale(0.85); }
-
-        /* 特殊カード用 */
         .special-card-wrapper { background: #f3e5f5; border-color: #ce93d8; }
         .mystery-icon { 
             width: 65px; height: 65px; border-radius: 50%; background: #222; color: white; 
             display: flex; align-items: center; justify-content: center; margin-right: 15px; 
             font-weight: bold; border: 3px solid #ce93d8; font-size: 1.5rem; 
         }
-
-        /* QA以降のスタイルは後編に含めます */
     </style>
 </head>
 <body>
@@ -338,7 +329,7 @@
             </div>
         </div>
 
-      <div id="qa" class="section-title">Q＆A</div>
+        <div id="qa" class="section-title">Q＆A</div>
         <div class="qa-box">
             <div class="qa-menu" style="background: #fff0f3; border-radius: 15px; padding: 20px; margin-bottom: 30px;">
                 <strong style="display: block; margin-bottom: 15px; color: #d81b60; font-size: 1rem; text-align: center;">質問一覧</strong>
@@ -384,61 +375,39 @@
                 <p class="a-text" style="font-size: 0.9rem; line-height: 1.7; color: #333;">A.エマ（女性用）のチャットで自身の名前を「二階堂ヒロ」として<i>*「私達はいつものように帰りに寄り道していたら、気を失い……突然牢屋敷という絶海の孤島のオリの中へ共に閉じ込められていた」*</i>と送ると、既視感のあるストーリーが始まります。（掲示板の投稿を参考）</p>
             </div>
         </div>
-
-        <div id="bbs" class="section-title">掲示板</div>
-        <div style="width: 100%; background: white; border-radius: 25px; padding: 10px; border: 2px solid #f06292; box-shadow: 0 5px 20px rgba(0,0,0,0.08); box-sizing: border-box;">
-            <iframe src="https://z.wikiwiki.jp/manogeki-zeta/" 
-                    style="width: 100%; height: 600px; border: none; border-radius: 15px;"
-                    title="掲示板">
-            </iframe>
-        </div>
-        <div style="text-align: center; margin-top: 15px;">
-            <a href="https://z.wikiwiki.jp/manogeki-zeta/" target="_blank" style="color: #d81b60; font-size: 0.8rem; text-decoration: none; font-weight: bold;">
-                ▶ 掲示板を別ウィンドウで開く
-            </a>
-        </div>
-
-        <footer>
-            質問は <a href="https://x.com/2CqE3fQZJS1904" target="_blank">製作者X</a> / <a href="https://x.com/gi___to" target="_blank">管理者X</a> / <a href="https://www.youtube.com/@gi_to" target="_blank">YouTube</a> まで
-        </footer>
-    </div>
-
-    <a href="#" class="back-to-top" id="backToTop">TOP</a>
-
-    <script src="https://unpkg.com/@lyket/widget@latest/dist/lyket.js?apiKey=pt_68b255555c772500b434d6e1555667"></script>
-
-    <script>
+    </div> <script>
         function spinRandom() {
             const cards = document.querySelectorAll('.girl-card');
-            const resultDisplay = document.getElementById('random-result');
+            if (cards.length === 0) return;
+            
+            const resultBox = document.getElementById('random-result');
             const linkArea = document.getElementById('random-link-area');
             let count = 0;
-            const maxSpins = 12;
-            const interval = setInterval(() => {
-                const randomCard = cards[Math.floor(Math.random() * cards.length)];
-                const name = randomCard.querySelector('.card-name').innerText;
-                resultDisplay.innerText = name;
-                count++;
-                if (count >= maxSpins) {
-                    clearInterval(interval);
-                    const finalCard = cards[Math.floor(Math.random() * cards.length)];
-                    const finalName = finalCard.querySelector('.card-name').innerText;
-                    const finalUrl = finalCard.getAttribute('href');
-                    resultDisplay.innerHTML = "✨ " + finalName + " ✨";
-                    linkArea.innerHTML = `<a href="${finalUrl}" style="background:#ad1457; color:white; text-decoration:none; padding:8px 15px; border-radius:20px; font-size:0.8rem; font-weight:bold;">この子で遊ぶ！</a>`;
-                }
-            }, 80);
-        }
+            const maxCount = 15;
+            
+            linkArea.innerHTML = ''; 
 
-        document.getElementById('backToTop').addEventListener('click', (e) => {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-        
-        // Lyket再スキャン実行
-        window.onload = function() {
-            if (window.lyket) window.lyket.reparse();
-        };
+            const interval = setInterval(() => {
+                const randomIndex = Math.floor(Math.random() * cards.length);
+                const card = cards[randomIndex];
+                const name = card.querySelector('.card-name').textContent;
+                resultBox.textContent = name;
+                count++;
+                
+                if (count > maxCount) {
+                    clearInterval(interval);
+                    // 決定時の処理
+                    const finalIndex = Math.floor(Math.random() * cards.length);
+                    const finalCard = cards[finalIndex];
+                    const finalName = finalCard.querySelector('.card-name').textContent;
+                    const finalLink = finalCard.getAttribute('href');
+                    
+                    resultBox.textContent = "🎉 " + finalName + " 🎉";
+                    linkArea.innerHTML = `<a href="${finalLink}" target="_blank" style="display:inline-block; margin-top:10px; color:#d81b60; font-weight:bold; text-decoration:underline;">このページへ移動する ➡</a>`;
+                }
+            }, 100);
+        }
     </script>
+
 </body>
 </html>
