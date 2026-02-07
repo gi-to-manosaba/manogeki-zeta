@@ -338,7 +338,7 @@
             </div>
         </div>
 
-        <div id="qa" class="section-title">Q＆A</div>
+      <div id="qa" class="section-title">Q＆A</div>
         <div class="qa-box">
             <div class="qa-menu" style="background: #fff0f3; border-radius: 15px; padding: 20px; margin-bottom: 30px;">
                 <strong style="display: block; margin-bottom: 15px; color: #d81b60; font-size: 1rem; text-align: center;">質問一覧</strong>
@@ -403,42 +403,42 @@
         </footer>
     </div>
 
-    <a href="#" class="back-to-top" id="backToTop" style="position: fixed; right: 20px; bottom: 30px; width: 50px; height: 50px; background: #d81b60; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 1000; font-size: 0.8rem; font-weight: bold; opacity: 0.9; transition: 0.3s;">TOP</a>
+    <a href="#" class="back-to-top" id="backToTop">TOP</a>
+
+    <script src="https://unpkg.com/@lyket/widget@latest/dist/lyket.js?apiKey=pt_68b255555c772500b434d6e1555667"></script>
 
     <script>
-        // ランダム選択機能のロジック
         function spinRandom() {
             const cards = document.querySelectorAll('.girl-card');
             const resultDisplay = document.getElementById('random-result');
             const linkArea = document.getElementById('random-link-area');
-            
             let count = 0;
             const maxSpins = 12;
-            
             const interval = setInterval(() => {
                 const randomCard = cards[Math.floor(Math.random() * cards.length)];
                 const name = randomCard.querySelector('.card-name').innerText;
                 resultDisplay.innerText = name;
                 count++;
-
                 if (count >= maxSpins) {
                     clearInterval(interval);
                     const finalCard = cards[Math.floor(Math.random() * cards.length)];
                     const finalName = finalCard.querySelector('.card-name').innerText;
                     const finalUrl = finalCard.getAttribute('href');
-                    
                     resultDisplay.innerHTML = "✨ " + finalName + " ✨";
                     linkArea.innerHTML = `<a href="${finalUrl}" style="background:#ad1457; color:white; text-decoration:none; padding:8px 15px; border-radius:20px; font-size:0.8rem; font-weight:bold;">この子で遊ぶ！</a>`;
                 }
             }, 80);
         }
 
-        // スムーズスクロール（トップへ戻る）
         document.getElementById('backToTop').addEventListener('click', (e) => {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
+        
+        // Lyket再スキャン実行
+        window.onload = function() {
+            if (window.lyket) window.lyket.reparse();
+        };
     </script>
-
 </body>
 </html>
