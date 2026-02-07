@@ -8,10 +8,8 @@
     <link rel="icon" href="favicon.png" type="image/png">
     <link rel="apple-touch-icon" href="favicon.png">
 
-    <script src="https://unpkg.com/@lyket/widget@latest/dist/lyket.js?apiKey=pt_68b255555c772500b434d6e1555667"></script>
-
     <style>
-        /* --- デザイン設定（変更なし） --- */
+        /* --- デザイン設定 --- */
         html { scroll-behavior: smooth; }
         body {
             font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
@@ -61,12 +59,20 @@
         .card-info { flex: 1; }
         .card-name { display: block; font-weight: bold; color: #d81b60; font-size: 1.05rem; margin-bottom: 4px; }
         .card-text { display: block; font-size: 0.85rem; color: #666; line-height: 1.4; }
+        
+        /* アンケートエリア修正 */
         .survey-area {
-            display: flex; justify-content: space-around; padding: 10px; background: #fffcfd; border-top: 1px dashed #f8bbd0;
+            display: flex; justify-content: space-around; padding: 10px; background: #fffcfd; border-top: 1px dashed #f8bbd0; min-height: 50px; /* 高さ確保 */
         }
         .survey-item { display: flex; flex-direction: column; align-items: center; flex: 1; }
-        .survey-label { font-size: 0.65rem; font-weight: bold; color: #999; margin-bottom: -5px; }
+        .survey-label { font-size: 0.65rem; font-weight: bold; color: #999; margin-bottom: 2px; }
+        
+        /* ボタンが表示されない時のためのプレースホルダー */
+        [data-lyket-type]:empty::before {
+            content: "⏳"; font-size: 12px; opacity: 0.5;
+        }
         [data-lyket-type] { transform: scale(0.85); }
+        
         .special-card-wrapper { background: #f3e5f5; border-color: #ce93d8; }
         .mystery-icon { 
             width: 65px; height: 65px; border-radius: 50%; background: #222; color: white; 
@@ -265,6 +271,7 @@
                 </div>
             </div>
         </div>
+
         <div id="special">
             <div class="section-title">Special</div>
             <div class="card-wrapper special-card-wrapper">
@@ -408,6 +415,8 @@
             }, 100);
         }
     </script>
+
+    <script src="https://unpkg.com/@lyket/widget@latest/dist/lyket.js?apiKey=pt_68b255555c772500b434d6e1555667"></script>
 
 </body>
 </html>
