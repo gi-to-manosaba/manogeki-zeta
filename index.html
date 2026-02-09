@@ -9,154 +9,78 @@
     <link rel="apple-touch-icon" href="favicon.png">
 
     <style>
-        /* --- 全体の設定 --- */
+        /* --- 全体のデザイン設定 --- */
         html { scroll-behavior: smooth; }
         body {
             font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
             background: linear-gradient(135deg, #fff5f8 0%, #fce4ec 100%);
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: #444;
-            min-height: 100vh;
-            overflow-x: hidden;
+            margin: 0; padding: 20px;
+            display: flex; flex-direction: column; align-items: center;
+            color: #444; min-height: 100vh; overflow-x: hidden;
         }
-
-        .container {
-            width: 100%;
-            max-width: 500px;
-        }
-
+        .container { width: 100%; max-width: 500px; }
         h1 {
-            font-size: 1.8rem; color: #d81b60; text-align: center;
-            margin: 20px 0; font-weight: bold;
-            background: rgba(255, 255, 255, 0.8);
-            padding: 15px; border-radius: 50px;
+            font-size: 1.8rem; color: #d81b60; text-align: center; margin: 20px 0; font-weight: bold;
+            background: rgba(255, 255, 255, 0.8); padding: 15px; border-radius: 50px;
             box-shadow: 0 4px 10px rgba(216, 27, 96, 0.1);
         }
-
-        /* アプリ起動のアナウンス */
         .app-notice {
-            background: #fff3e0;
-            border: 1px solid #ffb74d;
-            border-radius: 12px;
-            padding: 10px;
-            font-size: 0.75rem;
-            color: #e65100;
-            margin-bottom: 15px;
-            text-align: center;
-            line-height: 1.4;
+            background: #fff3e0; border: 1px solid #ffb74d; border-radius: 12px;
+            padding: 10px; font-size: 0.75rem; color: #e65100; margin-bottom: 15px;
+            text-align: center; line-height: 1.4;
         }
-
         .intro {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 20px; padding: 20px;
+            background: rgba(255, 255, 255, 0.9); border-radius: 20px; padding: 20px;
             font-size: 0.9rem; line-height: 1.6; color: #7b1fa2;
-            text-align: center; border: 2px solid #f8bbd0;
-            margin-bottom: 25px;
+            text-align: center; border: 2px solid #f8bbd0; margin-bottom: 25px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
-
-        /* ランダム選択セクション */
         .random-container {
-            background: white;
-            border-radius: 20px;
-            padding: 20px;
-            margin-bottom: 30px;
-            text-align: center;
-            border: 2px dashed #f06292;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            background: white; border-radius: 20px; padding: 20px; margin-bottom: 30px;
+            text-align: center; border: 2px dashed #f06292; box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
         .random-title { font-size: 0.9rem; font-weight: bold; color: #d81b60; margin-bottom: 10px; }
         #random-result { font-size: 1.2rem; font-weight: bold; color: #ad1457; min-height: 1.5em; margin: 10px 0; }
-        .btn-random {
-            background: #f06292; color: white; border: none; padding: 10px 20px;
-            border-radius: 25px; cursor: pointer; font-weight: bold; transition: 0.2s;
-        }
+        .btn-random { background: #f06292; color: white; border: none; padding: 10px 20px; border-radius: 25px; cursor: pointer; font-weight: bold; transition: 0.2s; }
         .btn-random:active { transform: scale(0.95); }
-
-        .toc {
-            display: flex; flex-wrap: wrap; justify-content: center;
-            gap: 8px; margin-bottom: 30px;
-        }
+        .toc { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 30px; }
         .toc a {
-            background: #d81b60; color: white; text-decoration: none;
-            padding: 8px 14px; border-radius: 25px; 
-            font-size: 0.8rem;
-            font-weight: bold; transition: 0.3s; 
-            box-shadow: 0 4px 10px rgba(216, 27, 96, 0.2);
-            white-space: nowrap;
+            background: #d81b60; color: white; text-decoration: none; padding: 8px 14px; border-radius: 25px; 
+            font-size: 0.8rem; font-weight: bold; transition: 0.3s; box-shadow: 0 4px 10px rgba(216, 27, 96, 0.2); white-space: nowrap;
         }
         .toc a:hover { transform: translateY(-2px); background: #ad1457; }
-
-        .section-title {
-            font-size: 1.3rem; color: #880e4f; font-weight: bold;
-            text-align: center; margin: 40px 0 20px; position: relative;
-        }
-        .section-title:after {
-            content: ""; display: block; width: 50px; height: 3px;
-            background: #f06292; margin: 8px auto 0; border-radius: 2px;
-        }
-
+        .section-title { font-size: 1.3rem; color: #880e4f; font-weight: bold; text-align: center; margin: 40px 0 20px; position: relative; }
+        .section-title:after { content: ""; display: block; width: 50px; height: 3px; background: #f06292; margin: 8px auto 0; border-radius: 2px; }
         .card {
-            display: flex; align-items: center;
-            background: white; border-radius: 20px;
-            padding: 15px; margin-bottom: 15px;
-            text-decoration: none; color: inherit;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: 0.3s; border: 2px solid #fce4ec;
-            -webkit-tap-highlight-color: transparent;
+            display: flex; align-items: center; background: white; border-radius: 20px;
+            padding: 15px; margin-bottom: 15px; text-decoration: none; color: inherit;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08); transition: 0.3s; border: 2px solid #fce4ec; -webkit-tap-highlight-color: transparent;
         }
         .card:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(240, 98, 146, 0.2); border-color: #f8bbd0; }
-
         .card-icon { width: 65px; height: 65px; border-radius: 50%; margin-right: 15px; border: 3px solid #f8bbd0; flex-shrink: 0; object-fit: cover; }
         .card-info { flex: 1; }
         .card-name { display: block; font-weight: bold; color: #d81b60; font-size: 1.05rem; margin-bottom: 4px; }
         .card-text { display: block; font-size: 0.85rem; color: #666; line-height: 1.4; }
-
         .special-card { background: #f3e5f5; border-color: #ce93d8; }
         .special-card .card-name { color: #6a1b9a; }
         .mystery-icon { width: 65px; height: 65px; border-radius: 50%; background: #222; color: white; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-weight: bold; border: 3px solid #ce93d8; font-size: 1.5rem; }
-
         .qa-box { background: white; border-radius: 25px; padding: 25px; border: 2px solid #f06292; margin-top: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); }
         .qa-menu { background: #fff0f3; border-radius: 15px; padding: 20px; margin-bottom: 30px; }
         .qa-menu strong { display: block; margin-bottom: 15px; color: #d81b60; font-size: 1rem; text-align: center; }
         .qa-menu a { display: block; color: #6a1b9a; text-decoration: none; font-size: 0.9rem; line-height: 1.6; margin-bottom: 10px; padding-left: 1em; text-indent: -1em; }
         .qa-menu a:before { content: "● "; font-size: 0.7rem; color: #f06292; }
-
         .qa-item { margin-bottom: 40px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
-        .qa-item:last-child { border-bottom: none; }
         .q-text { font-weight: bold; color: #d81b60; font-size: 1rem; display: block; margin-bottom: 10px; line-height: 1.4; }
         .a-text { font-size: 0.9rem; line-height: 1.7; color: #333; }
         .qa-imgs { display: flex; gap: 10px; margin-top: 15px; }
         .qa-imgs img { width: 100%; border-radius: 12px; border: 1px solid #eee; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
         .qa-imgs.dual img { width: calc(50% - 5px); }
-
-        /* トップに戻るボタン */
         .back-to-top {
-            position: fixed;
-            right: 20px;
-            bottom: 30px;
-            width: 50px;
-            height: 50px;
-            background: #d81b60;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            z-index: 1000;
-            font-size: 0.8rem;
-            font-weight: bold;
-            opacity: 0.9;
-            transition: 0.3s;
+            position: fixed; right: 20px; bottom: 30px; width: 50px; height: 50px;
+            background: #d81b60; color: white; border-radius: 50%; display: flex;
+            align-items: center; justify-content: center; text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 1000; font-size: 0.8rem; font-weight: bold; opacity: 0.9; transition: 0.3s;
         }
-        .back-to-top:hover { opacity: 1; transform: scale(1.1); }
-
         footer { font-size: 0.8rem; text-align: center; color: #999; margin-top: 40px; padding-bottom: 30px; }
         footer a { color: #d81b60; text-decoration: none; font-weight: bold; }
     </style>
@@ -248,7 +172,6 @@
                 <div class="card-info"><span class="card-name">宝生マーゴ</span><span class="card-text">放課後、あなたは宝生マーゴと一緒に過ごしていた</span></div>
             </a>
         </div>
-
         <div id="special" class="section-title">Special</div>
         <a href="https://zeta.airbridge.io/ja/plots/8788b8bd-5247-48a0-8d9b-cf6fcbc9d44d/profile?share_id=38nc4tr7" class="card special-card girl-card">
             <div class="card-icon" style="background: #9575cd; display: flex; align-items: center; justify-content: center; color: white; border: none; font-size: 1.5rem;">👑</div>
@@ -272,6 +195,14 @@
             <img src="sherry.png" class="card-icon">
             <div class="card-info"><span class="card-name">橘シェリー（百合）</span><span class="card-text">シェリーとの帰り道、僕たちは一緒に帰路を辿って帰る。その姿はまるでカップルのように</span></div>
         </a>
+        <a href="https://zeta.airbridge.io/ja/plots/a81582ee-8d0a-486a-9aa2-e9e96896057e/profile" class="card girl-card">
+            <img src="meruru.png" class="card-icon">
+            <div class="card-info"><span class="card-name">氷上メルル（百合）</span><span class="card-text">放課後の帰り道一緒に帰っているあなたとメルルは遠くから見ても暖かく見え、それはまるでカップルのようだった</span></div>
+        </a>
+        <a href="https://zeta.airbridge.io/ja/plots/9d5e6a38-5c49-4a99-bbff-9da37a5da820/profile" class="card girl-card">
+            <img src="noa.png" class="card-icon">
+            <div class="card-info"><span class="card-name">城ヶ崎ノア（百合）</span><span class="card-text">ノアとあなたは美術室で一緒に絵を描いていた。</span></div>
+        </a>
 
         <div id="qa" class="section-title">Q＆A</div>
         <div class="qa-box">
@@ -293,7 +224,7 @@
 
             <div class="qa-item" id="q2">
                 <span class="q-text">Q. 途中でキャラが記憶喪失になってしまいます。</span>
-                <p class="a-text">A.このアプリの特性上、AIのメモリ容量に限界があるため随時記憶が上書きされてしまうためです。対処法としてはトークプロフィールに情報を自分で追加していくしかないです。（それでもその設定を忘れてしまう場合があります。）</p>
+                <p class="a-text">A.このアプリの特性上、AIのメモリ容量に限界があるため随時記憶が上書きされてしまうためです。対処法としてはトークプロフィールに情報を自分で追加していくしかないです。</p>
             </div>
 
             <div class="qa-item" id="q3">
@@ -310,13 +241,13 @@
 
             <div class="qa-item" id="q5">
                 <span class="q-text">Q.トークをリセット、または途中のある地点からから新しくトークを始めることはできますか？</span>
-                <p class="a-text">A.右上の三本線から「新しいトーク」を選べば可能です。<br>また、途中からリセットする方法は、その地点のトークを長押しし、「ここから新しく始める」を押すことで可能です。それ以前のトークは保存され、右上の三本線から「再開」を押せばその地点からやり直せます。</p>
+                <p class="a-text">A.右上の三本線から「新しいトーク」を選べば可能です。</p>
                 <div class="qa-imgs dual"><img src="1.png"><img src="5.png"></div>
             </div>
 
             <div class="qa-item" id="q6">
                 <span class="q-text">Q.面白い設定はありますか？</span>
-                <p class="a-text">A.エマ（女性用）のチャットで自身の名前を「二階堂ヒロ」として<i>*「私達はいつものように帰りに寄り道していたら、気を失い……突然牢屋敷という絶海の孤島のオリの中へ共に閉じ込められていた」*</i>と送ると、既視感のあるストーリーが始まります。（掲示板の投稿を参考）</p>
+                <p class="a-text">A.エマ（女性用）のチャットで自身の名前を「二階堂ヒロ」としてストーリーを送ると、掲示板のような展開が楽しめます。</p>
             </div>
         </div>
 
@@ -341,41 +272,31 @@
     <a href="#" class="back-to-top" id="backToTop">TOP</a>
 
     <script>
-        // ランダム選択機能のロジック
         function spinRandom() {
             const cards = document.querySelectorAll('.girl-card');
             const resultDisplay = document.getElementById('random-result');
             const linkArea = document.getElementById('random-link-area');
-            
             let count = 0;
             const maxSpins = 12;
-            
-            // 演出：名前を素早く切り替える
             const interval = setInterval(() => {
                 const randomCard = cards[Math.floor(Math.random() * cards.length)];
                 const name = randomCard.querySelector('.card-name').innerText;
                 resultDisplay.innerText = name;
                 count++;
-
                 if (count >= maxSpins) {
                     clearInterval(interval);
-                    // 最終決定
                     const finalCard = cards[Math.floor(Math.random() * cards.length)];
                     const finalName = finalCard.querySelector('.card-name').innerText;
                     const finalUrl = finalCard.getAttribute('href');
-                    
                     resultDisplay.innerHTML = "✨ " + finalName + " ✨";
                     linkArea.innerHTML = `<a href="${finalUrl}" style="background:#ad1457; color:white; text-decoration:none; padding:8px 15px; border-radius:20px; font-size:0.8rem; font-weight:bold;">この子で遊ぶ！</a>`;
                 }
             }, 80);
         }
-
-        // スムーズスクロール（トップへ戻る）
         document.getElementById('backToTop').addEventListener('click', (e) => {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     </script>
-
 </body>
 </html>
